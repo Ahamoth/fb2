@@ -1,0 +1,140 @@
+:root {
+  --white: #ffffff;
+  --blue: #87ceeb;
+
+  --background: #172030;
+  --foreground: #f7e3af;
+
+  --shadowLight: 2px 1px 7px var(--foreground);
+  --shadowDark: 2px 1px 7px var(--background);
+
+  --borderLight: 1px solid var(var(--shadowLight))
+  --borderDark: 1px solid var(var(--shadowDark))
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: normal;
+}
+html {
+  min-height: 100%;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  font-family: monospace;
+  font-size: 12px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  background-color: inherit;
+  border: var(--borderLight);
+  box-shadow: var(--shadowLight);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.light {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.light header {
+  background-color: var(--foreground);
+  border: var(--borderDark);
+  box-shadow: var(--shadowDark);
+}
+
+.dark {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.dark header {
+  background-color: var(--background);
+  border: var(--borderLight);
+  box-shadow: var(--shadowLight);
+}
+
+.bookmark {
+  background-color: var(--blue);
+  color: var(--background);
+  display: inline;
+}
+
+.settings {
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+#viewer {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: inherit;
+  overflow: hidden;
+}
+
+#file-input {
+  cursor: pointer;
+}
+
+#textTitle {
+  display: inline;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: initial;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+#theme option {
+  text-align: center;
+}
+#theme option:last-child {
+  font-size: 18px;
+}
+
+.image {
+  max-width: 300px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--white);
+}
+
+.loader {
+  font-weight: 700;
+  padding: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.light .loader{
+  background-color: var(--foreground);
+  border: var(--borderDark);
+  box-shadow: var(--shadowDark);
+}
+
+.dark .loader{
+  background-color: var(--background);
+  border: var(--borderLight);
+  box-shadow: var(--shadowLight);
+}
